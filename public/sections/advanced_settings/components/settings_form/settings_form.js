@@ -1,12 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   KuiForm,
   KuiFormRow,
-  KuiLink,
-  KuiFieldText,
-  KuiTextArea,
-  KuiSelect
+  KuiLink
 } from 'ui_framework/components';
 import {
   ArrayEditor,
@@ -49,7 +45,7 @@ export class SettingsForm extends React.Component {
           isCustom
         }
       }
-    })
+    });
 
     this.props.onChange();
   }
