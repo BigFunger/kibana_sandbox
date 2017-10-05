@@ -1,0 +1,451 @@
+{
+  "xPack:defaultAdminEmail": {
+    "description": "Recipient email address for X-Pack admin operations, such as Cluster Alert email notifications from Monitoring.",
+    "type": "string",
+    "value": null,
+    "category": "xpack_main",
+    "categoryDisplay": "Xpack Main",
+    "userValue": "ffgfgfg"
+  },
+  "xpackDashboardMode:roles": {
+    "description": "Roles that belong to View Dashboards Only mode",
+    "value": ["kibana_dashboard_only_user"],
+    "category": "dashboard_mode",
+    "categoryDisplay": "Dashboard Mode",
+    "userValue": []
+  },
+  "buildNum": {
+    "readonly": true,
+    "category": "kibana",
+    "categoryDisplay": "Kibana",
+    "userValue": 8467
+  },
+  "query:queryString:options": {
+    "value": "{ \"analyze_wildcard\": true, \"default_field\": \"*\" }",
+    "description": "<a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html\" target=\"_blank\">Options</a> for the lucene query string parser",
+    "type": "json",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "search:queryLanguage": {
+    "value": "lucene",
+    "description": "Query language used by the query bar. Kuery is an experimental new language built specifically for Kibana.",
+    "type": "select",
+    "options": ["lucene", "kuery"],
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "search:queryLanguage:switcher:enable": {
+    "value": false,
+    "description": "Show or hide the query language switcher in the query bar",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "sort:options": {
+    "value": "{ \"unmapped_type\": \"boolean\" }",
+    "description": "<a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-sort.html\" target=\"_blank\">Options</a> for the Elasticsearch sort parameter",
+    "type": "json",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "dateFormat": {
+    "value": "MMMM Do YYYY, HH:mm:ss.SSS",
+    "description": "When displaying a pretty formatted date, use this <a href=\"http://momentjs.com/docs/#/displaying/format/\" target=\"_blank\">format</a>",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "dateFormat:tz": {
+    "value": "Browser",
+    "description": "Which timezone should be used.  \"Browser\" will use the timezone detected by your browser.",
+    "type": "select",
+    "options": ["Browser", "Africa/Abidjan", "Africa/Accra", "Africa/Addis_Ababa", "Africa/Algiers", "Africa/Asmara", "Africa/Asmera", "Africa/Bamako", "Africa/Bangui", "Africa/Banjul", "Africa/Bissau", "Africa/Blantyre", "Africa/Brazzaville", "Africa/Bujumbura", "Africa/Cairo", "Africa/Casablanca", "Africa/Ceuta", "Africa/Conakry", "Africa/Dakar", "Africa/Dar_es_Salaam", "Africa/Djibouti", "Africa/Douala", "Africa/El_Aaiun", "Africa/Freetown", "Africa/Gaborone", "Africa/Harare", "Africa/Johannesburg", "Africa/Juba", "Africa/Kampala", "Africa/Khartoum", "Africa/Kigali", "Africa/Kinshasa", "Africa/Lagos", "Africa/Libreville", "Africa/Lome", "Africa/Luanda", "Africa/Lubumbashi", "Africa/Lusaka", "Africa/Malabo", "Africa/Maputo", "Africa/Maseru", "Africa/Mbabane", "Africa/Mogadishu", "Africa/Monrovia", "Africa/Nairobi", "Africa/Ndjamena", "Africa/Niamey", "Africa/Nouakchott", "Africa/Ouagadougou", "Africa/Porto-Novo", "Africa/Sao_Tome", "Africa/Timbuktu", "Africa/Tripoli", "Africa/Tunis", "Africa/Windhoek", "America/Adak", "America/Anchorage", "America/Anguilla", "America/Antigua", "America/Araguaina", "America/Argentina/Buenos_Aires", "America/Argentina/Catamarca", "America/Argentina/ComodRivadavia", "America/Argentina/Cordoba", "America/Argentina/Jujuy", "America/Argentina/La_Rioja", "America/Argentina/Mendoza", "America/Argentina/Rio_Gallegos", "America/Argentina/Salta", "America/Argentina/San_Juan", "America/Argentina/San_Luis", "America/Argentina/Tucuman", "America/Argentina/Ushuaia", "America/Aruba", "America/Asuncion", "America/Atikokan", "America/Atka", "America/Bahia", "America/Bahia_Banderas", "America/Barbados", "America/Belem", "America/Belize", "America/Blanc-Sablon", "America/Boa_Vista", "America/Bogota", "America/Boise", "America/Buenos_Aires", "America/Cambridge_Bay", "America/Campo_Grande", "America/Cancun", "America/Caracas", "America/Catamarca", "America/Cayenne", "America/Cayman", "America/Chicago", "America/Chihuahua", "America/Coral_Harbour", "America/Cordoba", "America/Costa_Rica", "America/Creston", "America/Cuiaba", "America/Curacao", "America/Danmarkshavn", "America/Dawson", "America/Dawson_Creek", "America/Denver", "America/Detroit", "America/Dominica", "America/Edmonton", "America/Eirunepe", "America/El_Salvador", "America/Ensenada", "America/Fort_Nelson", "America/Fort_Wayne", "America/Fortaleza", "America/Glace_Bay", "America/Godthab", "America/Goose_Bay", "America/Grand_Turk", "America/Grenada", "America/Guadeloupe", "America/Guatemala", "America/Guayaquil", "America/Guyana", "America/Halifax", "America/Havana", "America/Hermosillo", "America/Indiana/Indianapolis", "America/Indiana/Knox", "America/Indiana/Marengo", "America/Indiana/Petersburg", "America/Indiana/Tell_City", "America/Indiana/Vevay", "America/Indiana/Vincennes", "America/Indiana/Winamac", "America/Indianapolis", "America/Inuvik", "America/Iqaluit", "America/Jamaica", "America/Jujuy", "America/Juneau", "America/Kentucky/Louisville", "America/Kentucky/Monticello", "America/Knox_IN", "America/Kralendijk", "America/La_Paz", "America/Lima", "America/Los_Angeles", "America/Louisville", "America/Lower_Princes", "America/Maceio", "America/Managua", "America/Manaus", "America/Marigot", "America/Martinique", "America/Matamoros", "America/Mazatlan", "America/Mendoza", "America/Menominee", "America/Merida", "America/Metlakatla", "America/Mexico_City", "America/Miquelon", "America/Moncton", "America/Monterrey", "America/Montevideo", "America/Montreal", "America/Montserrat", "America/Nassau", "America/New_York", "America/Nipigon", "America/Nome", "America/Noronha", "America/North_Dakota/Beulah", "America/North_Dakota/Center", "America/North_Dakota/New_Salem", "America/Ojinaga", "America/Panama", "America/Pangnirtung", "America/Paramaribo", "America/Phoenix", "America/Port-au-Prince", "America/Port_of_Spain", "America/Porto_Acre", "America/Porto_Velho", "America/Puerto_Rico", "America/Rainy_River", "America/Rankin_Inlet", "America/Recife", "America/Regina", "America/Resolute", "America/Rio_Branco", "America/Rosario", "America/Santa_Isabel", "America/Santarem", "America/Santiago", "America/Santo_Domingo", "America/Sao_Paulo", "America/Scoresbysund", "America/Shiprock", "America/Sitka", "America/St_Barthelemy", "America/St_Johns", "America/St_Kitts", "America/St_Lucia", "America/St_Thomas", "America/St_Vincent", "America/Swift_Current", "America/Tegucigalpa", "America/Thule", "America/Thunder_Bay", "America/Tijuana", "America/Toronto", "America/Tortola", "America/Vancouver", "America/Virgin", "America/Whitehorse", "America/Winnipeg", "America/Yakutat", "America/Yellowknife", "Antarctica/Casey", "Antarctica/Davis", "Antarctica/DumontDUrville", "Antarctica/Macquarie", "Antarctica/Mawson", "Antarctica/McMurdo", "Antarctica/Palmer", "Antarctica/Rothera", "Antarctica/South_Pole", "Antarctica/Syowa", "Antarctica/Troll", "Antarctica/Vostok", "Arctic/Longyearbyen", "Asia/Aden", "Asia/Almaty", "Asia/Amman", "Asia/Anadyr", "Asia/Aqtau", "Asia/Aqtobe", "Asia/Ashgabat", "Asia/Ashkhabad", "Asia/Baghdad", "Asia/Bahrain", "Asia/Baku", "Asia/Bangkok", "Asia/Barnaul", "Asia/Beirut", "Asia/Bishkek", "Asia/Brunei", "Asia/Calcutta", "Asia/Chita", "Asia/Choibalsan", "Asia/Chongqing", "Asia/Chungking", "Asia/Colombo", "Asia/Dacca", "Asia/Damascus", "Asia/Dhaka", "Asia/Dili", "Asia/Dubai", "Asia/Dushanbe", "Asia/Gaza", "Asia/Harbin", "Asia/Hebron", "Asia/Ho_Chi_Minh", "Asia/Hong_Kong", "Asia/Hovd", "Asia/Irkutsk", "Asia/Istanbul", "Asia/Jakarta", "Asia/Jayapura", "Asia/Jerusalem", "Asia/Kabul", "Asia/Kamchatka", "Asia/Karachi", "Asia/Kashgar", "Asia/Kathmandu", "Asia/Katmandu", "Asia/Khandyga", "Asia/Kolkata", "Asia/Krasnoyarsk", "Asia/Kuala_Lumpur", "Asia/Kuching", "Asia/Kuwait", "Asia/Macao", "Asia/Macau", "Asia/Magadan", "Asia/Makassar", "Asia/Manila", "Asia/Muscat", "Asia/Nicosia", "Asia/Novokuznetsk", "Asia/Novosibirsk", "Asia/Omsk", "Asia/Oral", "Asia/Phnom_Penh", "Asia/Pontianak", "Asia/Pyongyang", "Asia/Qatar", "Asia/Qyzylorda", "Asia/Rangoon", "Asia/Riyadh", "Asia/Saigon", "Asia/Sakhalin", "Asia/Samarkand", "Asia/Seoul", "Asia/Shanghai", "Asia/Singapore", "Asia/Srednekolymsk", "Asia/Taipei", "Asia/Tashkent", "Asia/Tbilisi", "Asia/Tehran", "Asia/Tel_Aviv", "Asia/Thimbu", "Asia/Thimphu", "Asia/Tokyo", "Asia/Tomsk", "Asia/Ujung_Pandang", "Asia/Ulaanbaatar", "Asia/Ulan_Bator", "Asia/Urumqi", "Asia/Ust-Nera", "Asia/Vientiane", "Asia/Vladivostok", "Asia/Yakutsk", "Asia/Yekaterinburg", "Asia/Yerevan", "Atlantic/Azores", "Atlantic/Bermuda", "Atlantic/Canary", "Atlantic/Cape_Verde", "Atlantic/Faeroe", "Atlantic/Faroe", "Atlantic/Jan_Mayen", "Atlantic/Madeira", "Atlantic/Reykjavik", "Atlantic/South_Georgia", "Atlantic/St_Helena", "Atlantic/Stanley", "Australia/ACT", "Australia/Adelaide", "Australia/Brisbane", "Australia/Broken_Hill", "Australia/Canberra", "Australia/Currie", "Australia/Darwin", "Australia/Eucla", "Australia/Hobart", "Australia/LHI", "Australia/Lindeman", "Australia/Lord_Howe", "Australia/Melbourne", "Australia/NSW", "Australia/North", "Australia/Perth", "Australia/Queensland", "Australia/South", "Australia/Sydney", "Australia/Tasmania", "Australia/Victoria", "Australia/West", "Australia/Yancowinna", "Brazil/Acre", "Brazil/DeNoronha", "Brazil/East", "Brazil/West", "CET", "CST6CDT", "Canada/Atlantic", "Canada/Central", "Canada/East-Saskatchewan", "Canada/Eastern", "Canada/Mountain", "Canada/Newfoundland", "Canada/Pacific", "Canada/Saskatchewan", "Canada/Yukon", "Chile/Continental", "Chile/EasterIsland", "Cuba", "EET", "EST", "EST5EDT", "Egypt", "Eire", "Etc/GMT", "Etc/GMT+0", "Etc/GMT+1", "Etc/GMT+10", "Etc/GMT+11", "Etc/GMT+12", "Etc/GMT+2", "Etc/GMT+3", "Etc/GMT+4", "Etc/GMT+5", "Etc/GMT+6", "Etc/GMT+7", "Etc/GMT+8", "Etc/GMT+9", "Etc/GMT-0", "Etc/GMT-1", "Etc/GMT-10", "Etc/GMT-11", "Etc/GMT-12", "Etc/GMT-13", "Etc/GMT-14", "Etc/GMT-2", "Etc/GMT-3", "Etc/GMT-4", "Etc/GMT-5", "Etc/GMT-6", "Etc/GMT-7", "Etc/GMT-8", "Etc/GMT-9", "Etc/GMT0", "Etc/Greenwich", "Etc/UCT", "Etc/UTC", "Etc/Universal", "Etc/Zulu", "Europe/Amsterdam", "Europe/Andorra", "Europe/Astrakhan", "Europe/Athens", "Europe/Belfast", "Europe/Belgrade", "Europe/Berlin", "Europe/Bratislava", "Europe/Brussels", "Europe/Bucharest", "Europe/Budapest", "Europe/Busingen", "Europe/Chisinau", "Europe/Copenhagen", "Europe/Dublin", "Europe/Gibraltar", "Europe/Guernsey", "Europe/Helsinki", "Europe/Isle_of_Man", "Europe/Istanbul", "Europe/Jersey", "Europe/Kaliningrad", "Europe/Kiev", "Europe/Kirov", "Europe/Lisbon", "Europe/Ljubljana", "Europe/London", "Europe/Luxembourg", "Europe/Madrid", "Europe/Malta", "Europe/Mariehamn", "Europe/Minsk", "Europe/Monaco", "Europe/Moscow", "Europe/Nicosia", "Europe/Oslo", "Europe/Paris", "Europe/Podgorica", "Europe/Prague", "Europe/Riga", "Europe/Rome", "Europe/Samara", "Europe/San_Marino", "Europe/Sarajevo", "Europe/Simferopol", "Europe/Skopje", "Europe/Sofia", "Europe/Stockholm", "Europe/Tallinn", "Europe/Tirane", "Europe/Tiraspol", "Europe/Ulyanovsk", "Europe/Uzhgorod", "Europe/Vaduz", "Europe/Vatican", "Europe/Vienna", "Europe/Vilnius", "Europe/Volgograd", "Europe/Warsaw", "Europe/Zagreb", "Europe/Zaporozhye", "Europe/Zurich", "GB", "GB-Eire", "GMT", "GMT+0", "GMT-0", "GMT0", "Greenwich", "HST", "Hongkong", "Iceland", "Indian/Antananarivo", "Indian/Chagos", "Indian/Christmas", "Indian/Cocos", "Indian/Comoro", "Indian/Kerguelen", "Indian/Mahe", "Indian/Maldives", "Indian/Mauritius", "Indian/Mayotte", "Indian/Reunion", "Iran", "Israel", "Jamaica", "Japan", "Kwajalein", "Libya", "MET", "MST", "MST7MDT", "Mexico/BajaNorte", "Mexico/BajaSur", "Mexico/General", "NZ", "NZ-CHAT", "Navajo", "PRC", "PST8PDT", "Pacific/Apia", "Pacific/Auckland", "Pacific/Bougainville", "Pacific/Chatham", "Pacific/Chuuk", "Pacific/Easter", "Pacific/Efate", "Pacific/Enderbury", "Pacific/Fakaofo", "Pacific/Fiji", "Pacific/Funafuti", "Pacific/Galapagos", "Pacific/Gambier", "Pacific/Guadalcanal", "Pacific/Guam", "Pacific/Honolulu", "Pacific/Johnston", "Pacific/Kiritimati", "Pacific/Kosrae", "Pacific/Kwajalein", "Pacific/Majuro", "Pacific/Marquesas", "Pacific/Midway", "Pacific/Nauru", "Pacific/Niue", "Pacific/Norfolk", "Pacific/Noumea", "Pacific/Pago_Pago", "Pacific/Palau", "Pacific/Pitcairn", "Pacific/Pohnpei", "Pacific/Ponape", "Pacific/Port_Moresby", "Pacific/Rarotonga", "Pacific/Saipan", "Pacific/Samoa", "Pacific/Tahiti", "Pacific/Tarawa", "Pacific/Tongatapu", "Pacific/Truk", "Pacific/Wake", "Pacific/Wallis", "Pacific/Yap", "Poland", "Portugal", "ROC", "ROK", "Singapore", "Turkey", "UCT", "US/Alaska", "US/Aleutian", "US/Arizona", "US/Central", "US/East-Indiana", "US/Eastern", "US/Hawaii", "US/Indiana-Starke", "US/Michigan", "US/Mountain", "US/Pacific", "US/Pacific-New", "US/Samoa", "UTC", "Universal", "W-SU", "WET", "Zulu"],
+    "category": "kibana",
+    "categoryDisplay": "Kibana",
+    "userValue": "Africa/Accra"
+  },
+  "dateFormat:scaled": {
+    "type": "json",
+    "value": "[\n  [\"\", \"HH:mm:ss.SSS\"],\n  [\"PT1S\", \"HH:mm:ss\"],\n  [\"PT1M\", \"HH:mm\"],\n  [\"PT1H\", \"YYYY-MM-DD HH:mm\"],\n  [\"P1DT\", \"YYYY-MM-DD\"],\n  [\"P1YT\", \"YYYY\"]\n]",
+    "description": "Values that define the format used in situations where timebased data is rendered in order, and formatted timestamps should adapt to the interval between measurements. Keys are <a href=\"http://en.wikipedia.org/wiki/ISO_8601#Time_intervals\" target=\"_blank\">ISO8601 intervals.</a>",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "dateFormat:dow": {
+    "value": "Sunday",
+    "description": "What day should weeks start on?",
+    "type": "select",
+    "options": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "category": "kibana",
+    "categoryDisplay": "Kibana",
+    "userValue": "Wednesday"
+  },
+  "defaultIndex": {
+    "value": null,
+    "description": "The index to access if no index is set",
+    "category": "kibana",
+    "categoryDisplay": "Kibana",
+    "userValue": "7c0e6910-7877-11e7-9257-a5344ef4eefe"
+  },
+  "defaultColumns": {
+    "value": ["_source"],
+    "description": "Columns displayed by default in the Discovery tab",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "metaFields": {
+    "value": ["_source", "_id", "_type", "_index", "_score"],
+    "description": "Fields that exist outside of _source to merge into our document when displaying it",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "discover:sampleSize": {
+    "value": 500,
+    "description": "The number of rows to show in the table",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "discover:aggs:terms:size": {
+    "value": 20,
+    "type": "number",
+    "description": "Determines how many terms will be visualized when clicking the \"visualize\" button, in the field drop downs, in the discover sidebar.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "discover:sort:defaultOrder": {
+    "value": "desc",
+    "options": ["desc", "asc"],
+    "type": "select",
+    "description": "Controls the default sort direction for time based index patterns in the Discover app.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "doc_table:highlight": {
+    "value": true,
+    "description": "Highlight results in Discover and Saved Searches Dashboard.Highlighting makes requests slow when working on big documents.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "courier:maxSegmentCount": {
+    "value": 30,
+    "description": "Requests in discover are split into segments to prevent massive requests from being sent to elasticsearch. This setting attempts to prevent the list of segments from getting too long, which might cause requests to take much longer to process",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "courier:ignoreFilterIfFieldNotInIndex": {
+    "value": false,
+    "description": "This configuration enhances support for dashboards containing visualizations accessing dissimilar indexes. When set to false, all filters are applied to all visualizations. When set to true, filter(s) will be ignored for a visualization when the visualization's index does not contain the filtering field.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "fields:popularLimit": {
+    "value": 10,
+    "description": "The top N most popular fields to show",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "histogram:barTarget": {
+    "value": 50,
+    "description": "Attempt to generate around this many bars when using \"auto\" interval in date histograms",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "histogram:maxBars": {
+    "value": 100,
+    "description": "Never show more than this many bars in date histograms, scale values if needed",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "visualization:tileMap:maxPrecision": {
+    "value": 7,
+    "description": "The maximum geoHash precision displayed on tile maps: 7 is high, 10 is very high, 12 is the max. <a href=\"http://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-geohashgrid-aggregation.html#_cell_dimensions_at_the_equator\" target=\"_blank\">Explanation of cell dimensions</a>",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "visualization:tileMap:WMSdefaults": {
+    "value": "{\n  \"enabled\": false,\n  \"options\": {\n    \"format\": \"image/png\",\n    \"transparent\": true\n  }\n}",
+    "type": "json",
+    "description": "Default <a href=\"http://leafletjs.com/reference.html#tilelayer-wms\" target=\"_blank\">properties</a> for the WMS map server support in the coordinate map",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "visualization:regionmap:showWarnings": {
+    "value": true,
+    "description": "Whether the region map show a warning when terms cannot be joined to a shape on the map.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "visualization:colorMapping": {
+    "type": "json",
+    "value": "{\"Count\":\"#00A69B\"}",
+    "description": "Maps values to specified colors within visualizations",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "visualization:loadingDelay": {
+    "value": "2s",
+    "description": "Time to wait before dimming visualizations during query",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "visualization:dimmingOpacity": {
+    "type": "number",
+    "value": 0.5,
+    "description": "The opacity of the chart items that are dimmed when highlighting another element of the chart. The lower this number, the more the highlighted element will stand out.This must be a number between 0 and 1.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "csv:separator": {
+    "value": ",",
+    "description": "Separate exported values with this string",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "csv:quoteValues": {
+    "value": true,
+    "description": "Should values be quoted in csv exports?",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "history:limit": {
+    "value": 10,
+    "description": "In fields that have history (e.g. query inputs), show this many recent values",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "shortDots:enable": {
+    "value": false,
+    "description": "Shorten long fields, for example, instead of foo.bar.baz, show f.b.baz",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "truncate:maxHeight": {
+    "value": 115,
+    "description": "The maximum height that a cell in a table should occupy. Set to 0 to disable truncation",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "indexPattern:fieldMapping:lookBack": {
+    "value": 5,
+    "description": "For index patterns containing timestamps in their names, look for this many recent matching patterns from which to query the field mapping",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "indexPatterns:warnAboutUnsupportedTimePatterns": {
+    "value": false,
+    "description": "When an index pattern is using the now unsupported \"time pattern\" format, a warning will be displayed once per session that is using this pattern. Set this to false to disable that warning.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "format:defaultTypeMap": {
+    "type": "json",
+    "value": "{\n  \"ip\": { \"id\": \"ip\", \"params\": {} },\n  \"date\": { \"id\": \"date\", \"params\": {} },\n  \"number\": { \"id\": \"number\", \"params\": {} },\n  \"boolean\": { \"id\": \"boolean\", \"params\": {} },\n  \"_source\": { \"id\": \"_source\", \"params\": {} },\n  \"_default_\": { \"id\": \"string\", \"params\": {} }\n}",
+    "description": "Map of the format name to use by default for each field type. \"_default_\" is used if the field type is not mentioned explicitly",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "format:number:defaultPattern": {
+    "type": "string",
+    "value": "0,0.[000]",
+    "description": "Default <a href=\"http://numeraljs.com/\" target=\"_blank\">numeral format</a> for the \"number\" format",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "format:bytes:defaultPattern": {
+    "type": "string",
+    "value": "0,0.[000]b",
+    "description": "Default <a href=\"http://numeraljs.com/\" target=\"_blank\">numeral format</a> for the \"bytes\" format",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "format:percent:defaultPattern": {
+    "type": "string",
+    "value": "0,0.[000]%",
+    "description": "Default <a href=\"http://numeraljs.com/\" target=\"_blank\">numeral format</a> for the \"percent\" format",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "format:currency:defaultPattern": {
+    "type": "string",
+    "value": "($0,0.[00])",
+    "description": "Default <a href=\"http://numeraljs.com/\" target=\"_blank\">numeral format</a> for the \"currency\" format",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "savedObjects:perPage": {
+    "type": "number",
+    "value": 5,
+    "description": "Number of objects to show per page in the load dialog",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "savedObjects:listingLimit": {
+    "type": "number",
+    "value": 1000,
+    "description": "Number of objects to fetch for the listing pages",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "timepicker:timeDefaults": {
+    "type": "json",
+    "value": "{\n  \"from\": \"now-15m\",\n  \"to\": \"now\",\n  \"mode\": \"quick\"\n}",
+    "description": "The timefilter selection to use when Kibana is started without one",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "timepicker:refreshIntervalDefaults": {
+    "type": "json",
+    "value": "{\n  \"display\": \"Off\",\n  \"pause\": false,\n  \"value\": 0\n}",
+    "description": "The timefilter's default refresh interval",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "dashboard:defaultDarkTheme": {
+    "value": false,
+    "description": "New dashboards use dark theme by default",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "filters:pinnedByDefault": {
+    "value": false,
+    "description": "Whether the filters should have a global state (be pinned) by default",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "filterEditor:suggestValues": {
+    "value": true,
+    "description": "Set this property to `false` to prevent the filter editor from suggesting values for fields.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "notifications:banner": {
+    "type": "markdown",
+    "description": "A custom banner intended for temporary notices to all users. <a href=\"https://help.github.com/articles/basic-writing-and-formatting-syntax/\" target=\"_blank\">Markdown supported</a>.",
+    "value": "",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "notifications:lifetime:banner": {
+    "value": 3000000,
+    "description": "The time in milliseconds which a banner notification will be displayed on-screen for. Setting to Infinity will disable the countdown.",
+    "type": "number",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "notifications:lifetime:error": {
+    "value": 300000,
+    "description": "The time in milliseconds which an error notification will be displayed on-screen for. Setting to Infinity will disable.",
+    "type": "number",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "notifications:lifetime:warning": {
+    "value": 10000,
+    "description": "The time in milliseconds which a warning notification will be displayed on-screen for. Setting to Infinity will disable.",
+    "type": "number",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "notifications:lifetime:info": {
+    "value": 5000,
+    "description": "The time in milliseconds which an information notification will be displayed on-screen for. Setting to Infinity will disable.",
+    "type": "number",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "metrics:max_buckets": {
+    "value": 2000,
+    "description": "The maximum number of buckets a single datasource can return",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "state:storeInSessionStorage": {
+    "value": false,
+    "description": "The URL can sometimes grow to be too large for some browsers to handle. To counter-act this we are testing if storing parts of the URL in sessions storage could help. Please let us know how it goes!",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "indexPattern:placeholder": {
+    "value": "logstash-*",
+    "description": "The placeholder for the field \"Index name or pattern\" in the \"Settings > Indices\" tab.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "context:defaultSize": {
+    "value": 5,
+    "description": "The number of surrounding entries to show in the context view",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "context:step": {
+    "value": 5,
+    "description": "The step size to increment or decrement the context size by",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "context:tieBreakerFields": {
+    "value": ["_doc"],
+    "description": "A comma-separated list of fields to use for tiebreaking between documents that have the same timestamp value. From this list the first field that is present and sortable in the current index pattern is used.",
+    "category": "kibana",
+    "categoryDisplay": "Kibana"
+  },
+  "timelion:showTutorial": {
+    "value": false,
+    "description": "Should I show the tutorial by default when entering the timelion app?",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:es.timefield": {
+    "value": "@timestamp",
+    "description": "Default field containing a timestamp when using .es()",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:es.default_index": {
+    "value": "_all",
+    "description": "Default elasticsearch index to search with .es()",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:target_buckets": {
+    "value": 200,
+    "description": "The number of buckets to shoot for when using auto intervals",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:max_buckets": {
+    "value": 2000,
+    "description": "The maximum number of buckets a single datasource can return",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:default_columns": {
+    "value": 2,
+    "description": "Number of columns on a timelion sheet by default",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:default_rows": {
+    "value": 2,
+    "description": "Number of rows on a timelion sheet by default",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:min_interval": {
+    "value": "1ms",
+    "description": "The smallest interval that will be calculated when using \"auto\"",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:graphite.url": {
+    "value": "https://www.hostedgraphite.com/UID/ACCESS_KEY/graphite",
+    "description": "<em>[experimental]</em> The URL of your graphite host",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  },
+  "timelion:quandl.key": {
+    "value": "someKeyHere",
+    "description": "<em>[experimental]</em> Your API key from www.quandl.com",
+    "category": "timelion",
+    "categoryDisplay": "Timelion"
+  }
+}

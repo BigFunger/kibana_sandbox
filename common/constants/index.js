@@ -1,0 +1,1 @@
+export { ALIGNMENTS } from './alignments';

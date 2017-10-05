@@ -1,0 +1,126 @@
+[{
+  "disabled": false,
+  "display": "Connect Data",
+  "id": "data",
+  "items": {
+    "raw": []
+  },
+  "order": 0,
+  "tooltip": "",
+  "url": "",
+  "visible": true
+}, {
+  "disabled": false,
+  "display": "Security",
+  "id": "security",
+  "items": {
+    "raw": [{
+      "disabled": false,
+      "display": "Users",
+      "id": "users",
+      "order": 10,
+      "url": "#/management/security/users",
+      "visible": true
+    }, {
+      "disabled": false,
+      "display": "Roles",
+      "id": "roles",
+      "order": 20,
+      "url": "#/management/security/roles",
+      "visible": true
+    }]
+  },
+  "order": 10,
+  "tooltip": "",
+  "url": "",
+  "visible": true
+}, {
+  "disabled": false,
+  "display": "Elasticsearch",
+  "id": "elasticsearch",
+  "items": {
+    "raw": [{
+      "disabled": false,
+      "display": "Watcher",
+      "id": "watcher",
+      "order": 4,
+      "tooltip": "",
+      "url": "#/management/elasticsearch/watcher/",
+      "visible": true
+    }, {
+      "disabled": false,
+      "display": "Upgrade Assistant",
+      "id": "upgrade_assistant",
+      "order": 5,
+      "tooltip": "Upgrade assistance to next major version",
+      "url": "#/management/elasticsearch/upgrade_assistant/",
+      "visible": true
+    }]
+  },
+  "order": 20,
+  "tooltip": "",
+  "url": "",
+  "visible": true
+}, {
+  "disabled": false,
+  "display": "Kibana",
+  "id": "kibana",
+  "items": {
+    "raw": [{
+      "disabled": false,
+      "display": "Advanced Settings",
+      "id": "settings",
+      "order": 20,
+      "tooltip": "",
+      "url": "#/management/kibana/settings",
+      "visible": true
+    }, {
+      "disabled": false,
+      "display": "Saved Objects",
+      "id": "objects",
+      "order": 10,
+      "tooltip": "",
+      "url": "#/management/kibana/objects",
+      "visible": true
+    }, {
+      "disabled": false,
+      "display": "Index Patterns",
+      "id": "indices",
+      "order": 0,
+      "tooltip": "",
+      "url": "#/management/kibana/indices/",
+      "visible": true
+    }, {
+      "disabled": false,
+      "display": "Advanced Settingz",
+      "id": "advanced_settingz",
+      "order": 25,
+      "tooltip": "",
+      "url": "#/management/kibana/settingz",
+      "visible": true
+    }]
+  },
+  "order": 30,
+  "tooltip": "",
+  "url": "",
+  "visible": true
+}, {
+  "disabled": false,
+  "display": "Logstash",
+  "id": "logstash",
+  "items": {
+    "raw": [{
+      "disabled": false,
+      "display": "Pipelines",
+      "id": "pipelines",
+      "order": 10,
+      "tooltip": "",
+      "url": "#/management/logstash/pipelines/",
+      "visible": true
+    }]
+  },
+  "order": 30,
+  "tooltip": "",
+  "url": "",
+  "visible": true
+}]
