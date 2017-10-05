@@ -1,1 +1,1 @@
-export { store, createIntegratedStore } from './store';
+export { createIntegratedStore } from './store';

@@ -12,9 +12,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = () => {
   return {};
-}
+};
 
 export const SettingsSidebar = connect(
   mapStateToProps,
