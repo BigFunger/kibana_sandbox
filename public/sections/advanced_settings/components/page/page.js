@@ -27,9 +27,11 @@ export class Page extends React.Component {
 
   render = () => {
     const {
-      categoryId,
-      showBottomBar
+      categoryId
     } = this.props;
+    const {
+      showBottomBar
+    } = this.state;
     return (
       <KuiPage>
         <KuiPageHeader>
