@@ -2,8 +2,8 @@ import { createAction } from 'redux-actions';
 import { createThunk } from 'redux-thunks';
 import { configService } from '../../services/config';
 
-export const formChanged =
-  createAction('ADVANCED_SETTINGS_FORM_CHANGED');
+export const formDirtied =
+  createAction('ADVANCED_SETTINGS_FORM_DIRTIED');
 
 export const loadSettingsSuccess =
 createAction('ADVANCED_SETTINGS_LOAD_SETTINGS_SUCCESS', ({ settings }) => ({ settings }));

@@ -1,24 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   KuiTextArea
 } from 'ui_framework/components';
 
 export class JsonEditor extends React.PureComponent {
-  getOnChangeHandler = () => (event) => {
-    this.props.onChange(event.target.value);
+  constructor(props) {
+    super(props);
+
+    this.onChange = (event) => {
+      props.onChange(event.target.value);
+    };
   }
-  
+
   render = () => {
     const {
       value
     } = this.props;
 
     return (
-      <KuiTextArea
-        onChange={this.getOnChangeHandler()}
-        value={value}
-      />
+      <div>
+        <h1>version 6</h1>
+        <KuiTextArea
+          onChange={this.onChange}
+          value={value}
+        />
+      </div>
     );
   }
 }

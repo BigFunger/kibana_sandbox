@@ -28,8 +28,7 @@ export class Page extends React.Component {
   render = () => {
     const {
       categoryId,
-      showBottomBar,
-      onFormChange
+      showBottomBar
     } = this.props;
     return (
       <KuiPage>
@@ -49,7 +48,6 @@ export class Page extends React.Component {
               <KuiSpacer size="l" />
               <SettingsForm
                 categoryId={categoryId}
-                onChange={onFormChange}
               />
             </KuiPageContentBody>
           </KuiPageContent>

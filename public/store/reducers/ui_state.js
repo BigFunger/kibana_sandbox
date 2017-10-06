@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 import {
   loadSettings,
@@ -7,7 +6,7 @@ import {
   saveSettings,
   saveSettingsSuccess,
   saveSettingsError,
-  formChanged
+  formDirtied
 } from '../actions/settings';
 
 const defaultState = {
@@ -19,7 +18,7 @@ const defaultState = {
 };
 
 export const uiState = handleActions({
-  [formChanged](state, action) {
+  [formDirtied](state, action) {
     return {
       ...state,
       showBottomBar: true

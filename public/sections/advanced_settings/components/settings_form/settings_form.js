@@ -47,7 +47,9 @@ export class SettingsForm extends React.Component {
       }
     });
 
-    this.props.onChange();
+    if (!this.props.showBottomBar) {
+      this.props.onChange();
+    }
   }
 
   onReset = (settingId) => {
@@ -78,9 +80,9 @@ export class SettingsForm extends React.Component {
 
     return (
       <Editor
-        onChange={ (value) => { this.onChange(setting.id, value); } }
-        options={ setting.options }
-        value={ setting.value }
+        onChange={(value) => { this.onChange(setting.id, value); }}
+        options={setting.options}
+        value={setting.value}
       />
     );
   }
@@ -98,13 +100,14 @@ export class SettingsForm extends React.Component {
           key={setting.id}
           helpText={
             <div>
-              <span dangerouslySetInnerHTML={{__html: setting.description}}></span>
+              <span dangerouslySetInnerHTML={{ __html: setting.description }} />
               { !setting.isCustom || (
                 <KuiLink
                   onClick={() => {
                     this.onReset(setting.id);
                   }}
-                  style={{marginLeft: '5px'}}>
+                  style={{ marginLeft: '5px' }}
+                >
                   Reset
                 </KuiLink>
               )}
@@ -116,7 +119,7 @@ export class SettingsForm extends React.Component {
         >
           { this.renderSetting(setting) }
         </KuiFormRow>
-      )
+      );
     });
   }
 

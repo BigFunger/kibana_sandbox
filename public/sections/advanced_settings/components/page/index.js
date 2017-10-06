@@ -1,9 +1,6 @@
 import { connect } from 'react-redux';
 import { Page as PresentationComponent } from './page';
-import {
-  loadSettings,
-  formChanged
-} from '../../../../store/actions/settings';
+import { loadSettings } from '../../../../store/actions/settings';
 import { getShowBottomBar } from '../../../../store/reducers/app';
 
 const mapStateToProps = (state) => {
@@ -16,9 +13,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFormChange: () => {
-      dispatch(formChanged());
-    },
     onLoadSettings: () => {
       dispatch(loadSettings());
     }

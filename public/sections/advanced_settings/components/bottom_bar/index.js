@@ -2,17 +2,17 @@ import { connect } from 'react-redux';
 import { BottomBar as PresentationComponent } from './bottom_bar';
 import { saveSettings } from '../../../../store/actions/settings';
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = () => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onSave: () => {
       dispatch(saveSettings());
     }
   };
-}
+};
 
 export const BottomBar = connect(
   mapStateToProps,
