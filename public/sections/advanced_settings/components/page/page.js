@@ -27,17 +27,15 @@ export class Page extends React.Component {
 
   render = () => {
     const {
-      categoryId
-    } = this.props;
-    const {
+      categoryId,
       showBottomBar
-    } = this.state;
+    } = this.props;
     return (
       <KuiPage>
         <KuiPageHeader>
           <KuiPageHeaderSection>
             <KuiTitle size="large">
-              <h1>Management 10</h1>
+              <h1>Management 11</h1>
             </KuiTitle>
           </KuiPageHeaderSection>
         </KuiPageHeader>
