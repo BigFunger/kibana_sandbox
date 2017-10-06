@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   KuiSwitch
 } from 'ui_framework/components';
 
 export class BooleanEditor extends React.PureComponent {
-  getOnChangeHandler = () => (event) => {
+  onChange = (event) => {
     this.props.onChange(event.target.checked);
   }
 
@@ -16,8 +15,8 @@ export class BooleanEditor extends React.PureComponent {
 
     return (
       <KuiSwitch
-        checked={!!this.props.value}
-        onChange={this.getOnChangeHandler()}
+        checked={!!value}
+        onChange={this.onChange}
       />
     );
   }

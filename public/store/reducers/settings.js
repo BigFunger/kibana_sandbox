@@ -1,7 +1,8 @@
 import { sortByOrder } from 'lodash';
 import { handleActions } from 'redux-actions';
 import {
-  loadSettingsSuccess
+  loadSettingsSuccess,
+  saveSettingsSuccess
 } from '../actions/settings';
 
 export const settings = handleActions({
@@ -10,6 +11,11 @@ export const settings = handleActions({
 
     return {
       ...settings
+    };
+  },
+  [saveSettingsSuccess](state) {
+    return {
+      ...state
     };
   }
 }, {});

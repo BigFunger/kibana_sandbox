@@ -31,6 +31,21 @@ export class SettingsForm extends React.Component {
     };
   }
 
+  componentWillReceiveProps = (nextProps) => {
+    console.log('settings_form.componentWillReceiveProps', nextProps, (this.props === nextProps));
+    const { settings } = nextProps;
+    const settingsObject = settings.reduce((acc, val) => {
+      acc[val.id] = val;
+      return acc;
+    }, {});
+
+    this.setState({
+      settings: {
+        ...settingsObject
+      }
+    });
+  }
+
   onChange = (settingId, value) => {
     const { settings } = this.state;
     const setting = settings[settingId];

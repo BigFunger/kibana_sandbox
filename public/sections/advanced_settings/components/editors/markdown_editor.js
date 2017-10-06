@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   KuiTextArea
 } from 'ui_framework/components';
 
 export class MarkdownEditor extends React.PureComponent {
-  getOnChangeHandler = () => (event) => {
+  onChange = (event) => {
     this.props.onChange(event.target.value);
   }
 
@@ -16,8 +15,8 @@ export class MarkdownEditor extends React.PureComponent {
 
     return (
       <KuiTextArea
-        onChange={this.getOnChangeHandler()}
         value={value}
+        onChange={this.onChange}
       />
     );
   }

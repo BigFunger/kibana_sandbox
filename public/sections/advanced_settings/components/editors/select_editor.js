@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   KuiSelect
 } from 'ui_framework/components';
 
 export class SelectEditor extends React.PureComponent {
-  getOnChangeHandler = () => (event) => {
+  onChange = (event) => {
     this.props.onChange(event.target.value);
   }
 
@@ -21,7 +20,7 @@ export class SelectEditor extends React.PureComponent {
       <KuiSelect
         options={selectOptions}
         value={value}
-        onChange={this.getOnChangeHandler()}
+        onChange={this.onChange}
       />
     );
   }

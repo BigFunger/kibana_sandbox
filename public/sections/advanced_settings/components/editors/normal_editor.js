@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   KuiFieldText
 } from 'ui_framework/components';
 
 export class NormalEditor extends React.PureComponent {
-  getOnChangeHandler = () => (event) => {
+  onChange = (event) => {
     this.props.onChange(event.target.value);
   }
 
@@ -16,8 +15,8 @@ export class NormalEditor extends React.PureComponent {
 
     return (
       <KuiFieldText
-        onChange={this.getOnChangeHandler()}
         value={value}
+        onChange={this.onChange}
       />
     );
   }

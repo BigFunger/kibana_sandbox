@@ -4,12 +4,8 @@ import {
 } from 'ui_framework/components';
 
 export class JsonEditor extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.onChange = (event) => {
-      props.onChange(event.target.value);
-    };
+  onChange = (event) => {
+    this.props.onChange(event.target.value);
   }
 
   render = () => {
@@ -19,7 +15,7 @@ export class JsonEditor extends React.PureComponent {
 
     return (
       <div>
-        <h1>version 6</h1>
+        <h1>version 8</h1>
         <KuiTextArea
           onChange={this.onChange}
           value={value}

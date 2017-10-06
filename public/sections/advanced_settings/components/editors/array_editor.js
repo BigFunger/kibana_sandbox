@@ -1,23 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   KuiFieldText
 } from 'ui_framework/components';
 
 export class ArrayEditor extends React.PureComponent {
-  getOnChangeHandler = () => (event) => {
+  onChange = (event) => {
     this.props.onChange(event.target.value);
   }
 
   render = () => {
     const {
-      value,
-      onChange
+      value
     } = this.props;
 
     return (
       <KuiFieldText
-        onChange={this.getOnChangeHandler()}
+        onChange={this.onChange}
         value={value}
       />
     );
