@@ -14,13 +14,10 @@ export class JsonEditor extends React.PureComponent {
     } = this.props;
 
     return (
-      <div>
-        <h1>version 8</h1>
-        <KuiTextArea
-          onChange={this.onChange}
-          value={value}
-        />
-      </div>
+      <KuiTextArea
+        onChange={this.onChange}
+        value={value}
+      />
     );
   }
 }

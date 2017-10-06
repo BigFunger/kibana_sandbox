@@ -18,47 +18,28 @@ export class SettingsForm extends React.Component {
     super(props);
     const { settings } = props;
 
-    //TODO: TEMP!
-    const settingsObject = settings.reduce((acc, val) => {
-      acc[val.id] = val;
-      return acc;
-    }, {});
-
     this.state = {
-      settings: {
-        ...settingsObject
-      }
+      ...settings
     };
   }
 
   componentWillReceiveProps = (nextProps) => {
-    console.log('settings_form.componentWillReceiveProps', nextProps, (this.props === nextProps));
     const { settings } = nextProps;
-    const settingsObject = settings.reduce((acc, val) => {
-      acc[val.id] = val;
-      return acc;
-    }, {});
 
     this.setState({
-      settings: {
-        ...settingsObject
-      }
+      ...settings
     });
   }
 
   onChange = (settingId, value) => {
-    const { settings } = this.state;
-    const setting = settings[settingId];
+    const setting = this.state[settingId];
     const isCustom = setting.defaultValue !== value;
 
     this.setState({
-      settings: {
-        ...settings,
-        [settingId]: {
-          ...setting,
-          value,
-          isCustom
-        }
+      [settingId]: {
+        ...setting,
+        value,
+        isCustom
       }
     });
 
@@ -68,8 +49,7 @@ export class SettingsForm extends React.Component {
   }
 
   onReset = (settingId) => {
-    const { settings } = this.state;
-    const setting = settings[settingId];
+    const setting = this.state[settingId];
     this.onChange(settingId, setting.defaultValue);
   }
 
@@ -103,10 +83,8 @@ export class SettingsForm extends React.Component {
   }
 
   renderSettings = () => {
-    const { settings } = this.state;
-
-    return Object.keys(settings).map(key => {
-      const setting = settings[key];
+    return Object.keys(this.state).map(key => {
+      const setting = this.state[key];
 
       return (
         <KuiFormRow
@@ -126,9 +104,6 @@ export class SettingsForm extends React.Component {
                   Reset
                 </KuiLink>
               )}
-              {/* <br />
-              <br />
-              <pre>{JSON.stringify(setting)}</pre> */}
             </div>
           }
         >

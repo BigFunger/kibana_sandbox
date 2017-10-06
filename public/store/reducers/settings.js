@@ -22,15 +22,16 @@ export const settings = handleActions({
 
 // Selectors
 export const getSettingsByCategoryId = (state, categoryId) => {
-  const settings = [];
+  const settings = {};
 
   Object.keys(state).forEach(id => {
     const setting = state[id];
     if (setting.category === categoryId) {
-      settings.push({ ...setting, id });
+      settings[id] = { ...setting, id };
     }
   });
-  return sortByOrder(settings, 'display');
+
+  return settings;
 };
 
 export const getAllCategories = (state) => {
