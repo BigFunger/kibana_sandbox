@@ -1,25 +1,28 @@
 import { combineReducers } from 'redux';
-import * as settings from './settings';
-import * as uiState from './ui_state';
+import * as fromSettings from './settings';
+import * as fromUiState from './ui_state';
+
+const settings = fromSettings.settings;
+const uiState = fromUiState.uiState;
 
 export const app = combineReducers({
-  settings: settings.settings,
-  uiState: uiState.uiState
+  settings,
+  uiState
 });
 
 // Selectors
 export const getSettingsByCategoryId = (state, categoryId) => {
-  return settings.getSettingsByCategoryId(state.settings, categoryId);
+  return fromSettings.getSettingsByCategoryId(state.settings, categoryId);
 };
 
 export const getAllCategories = (state) => {
-  return settings.getAllCategories(state.settings);
+  return fromSettings.getAllCategories(state.settings);
 };
 
 export const getCategoryById = (state, id) => {
-  return settings.getCategoryById(state.settings, id);
+  return fromSettings.getCategoryById(state.settings, id);
 };
 
 export const getShowBottomBar = (state) => {
-  return uiState.getShowBottomBar(state.uiState);
+  return fromUiState.getShowBottomBar(state.uiState);
 };

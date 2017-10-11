@@ -1,9 +1,15 @@
 import { connect } from 'react-redux';
 import { BottomBar as PresentationComponent } from './bottom_bar';
 import { saveSettings, loadSettings } from '../../../../store/actions/settings';
+import { getShowBottomBar } from '../../../../store/reducers/app';
 
-const mapStateToProps = () => {
-  return {};
+
+const mapStateToProps = (state) => {
+  const showBottomBar = getShowBottomBar(state);
+
+  return {
+    showBottomBar
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

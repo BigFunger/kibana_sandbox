@@ -22,7 +22,6 @@ export const settings = handleActions({
 
 // Selectors
 export const getSettingsByCategoryId = (state, categoryId) => {
-  console.log('settings.getSettingsByCategoryId');
   const settings = {};
 
   Object.keys(state).forEach(id => {

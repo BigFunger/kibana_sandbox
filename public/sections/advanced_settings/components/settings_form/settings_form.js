@@ -23,13 +23,13 @@ export class SettingsForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps = (nextProps) => {
-    const { settings } = nextProps;
+  // componentWillReceiveProps = (nextProps) => {
+  //   const { settings } = nextProps;
 
-    this.setState({
-      ...settings
-    });
-  }
+  //   this.setState({
+  //     ...settings
+  //   });
+  // }
 
   onChange = (settingId, value) => {
     const setting = this.state[settingId];
@@ -43,9 +43,7 @@ export class SettingsForm extends React.Component {
       }
     });
 
-    if (!this.props.showBottomBar) {
-      this.props.onChange();
-    }
+    this.props.onChange();
   }
 
   onReset = (settingId) => {
