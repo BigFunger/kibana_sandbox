@@ -34,7 +34,7 @@ export class Page extends React.Component {
         <KuiPageHeader>
           <KuiPageHeaderSection>
             <KuiTitle size="large">
-              <h1>Management 18</h1>
+              <h1>Management 19</h1>
             </KuiTitle>
           </KuiPageHeaderSection>
         </KuiPageHeader>

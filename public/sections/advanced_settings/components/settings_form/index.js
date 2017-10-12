@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { SettingsForm as PresentationComponent } from './settings_form';
-import { getSettingsByCategoryId } from '../../../../store/reducers/app';
+import { getSettings } from '../../../../store/reducers/app';
 import { formDirtied } from '../../../../store/actions/settings';
 
-const mapStateToProps = (state, props) => {
-  const settings = getSettingsByCategoryId(state, props.categoryId);
+const mapStateToProps = (state) => {
+  const settings = getSettings(state);
 
   return {
     settings

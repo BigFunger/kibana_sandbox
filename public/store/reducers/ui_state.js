@@ -78,3 +78,4 @@ export const uiState = handleActions({
 }, defaultState);
 
 export const getShowBottomBar = state => state.showBottomBar;
+export const getCategoryId = state => state.categoryId;
