@@ -8,6 +8,9 @@ import {
   saveSettingsError,
   formDirtied
 } from '../actions/settings';
+import {
+  setCategory
+} from '../actions/ui_state';
 
 const defaultState = {
   categoryId: 'kibana',
@@ -19,6 +22,12 @@ const defaultState = {
 };
 
 export const uiState = handleActions({
+  [setCategory](state, { payload: { categoryId } }) {
+    return {
+      ...state,
+      categoryId
+    };
+  },
   [formDirtied](state) {
     return {
       ...state,

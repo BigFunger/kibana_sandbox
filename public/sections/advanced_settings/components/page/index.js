@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { Page as PresentationComponent } from './page';
 import { loadSettings } from '../../../../store/actions/settings';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
   return {};
 };
 

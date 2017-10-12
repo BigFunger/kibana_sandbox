@@ -17,15 +17,19 @@ export class SettingsSidebar extends React.Component {
   }
 
   renderItems = () => {
-    const { currentId, categories } = this.props;
+    const {
+      currentId,
+      categories,
+      onCategoryChanged
+    } = this.props;
 
     return categories.map(category => {
       const isSelected = category.id === currentId;
       return (
         <KuiSideNavItem indent isSelected={isSelected} key={category.id}>
-          <a href={ `#/management/kibana/settingz/${category.id}` }>
+          <button onClick={() => onCategoryChanged(category.id)}>
             { category.display }
-          </a>
+          </ button>
         </KuiSideNavItem>
       );
     });

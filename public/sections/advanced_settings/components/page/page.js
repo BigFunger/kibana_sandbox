@@ -22,32 +22,28 @@ export class Page extends React.Component {
     const {
       onLoadSettings
     } = this.props;
+
     onLoadSettings();
   }
 
   render = () => {
-    const {
-      categoryId
-    } = this.props;
     return (
       <KuiPage>
         <KuiPageHeader>
           <KuiPageHeaderSection>
             <KuiTitle size="large">
-              <h1>Management 19</h1>
+              <h1>Management 23</h1>
             </KuiTitle>
           </KuiPageHeaderSection>
         </KuiPageHeader>
         <KuiPageBody>
-          <SettingsSidebar currentId={categoryId} />
+          <SettingsSidebar />
           <KuiPageContent>
-            <PageContentHeader categoryId={categoryId} />
+            <PageContentHeader />
             <KuiPageContentBody>
               <Warning />
               <KuiSpacer size="l" />
-              <SettingsForm
-                categoryId={categoryId}
-              />
+              <SettingsForm />
             </KuiPageContentBody>
           </KuiPageContent>
         </KuiPageBody>

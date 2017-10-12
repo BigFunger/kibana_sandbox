@@ -19,27 +19,31 @@ export class SettingsForm extends React.Component {
     const { settings } = props;
 
     this.state = {
-      ...settings
+      settings
     };
   }
 
-  // componentWillReceiveProps = (nextProps) => {
-  //   const { settings } = nextProps;
+  componentWillReceiveProps = (nextProps) => {
+    const { settings } = nextProps;
 
-  //   this.setState({
-  //     ...settings
-  //   });
-  // }
+    this.setState({
+      settings
+    });
+  }
 
   onChange = (settingId, value) => {
-    const setting = this.state[settingId];
+    const settings = this.state.settings;
+    const setting = settings[settingId];
     const isCustom = setting.defaultValue !== value;
 
     this.setState({
-      [settingId]: {
-        ...setting,
-        value,
-        isCustom
+      settings: {
+        ...settings,
+        [settingId]: {
+          ...setting,
+          value,
+          isCustom
+        }
       }
     });
 
@@ -47,7 +51,7 @@ export class SettingsForm extends React.Component {
   }
 
   onReset = (settingId) => {
-    const setting = this.state[settingId];
+    const setting = this.state.settings[settingId];
     this.onChange(settingId, setting.defaultValue);
   }
 
@@ -81,8 +85,8 @@ export class SettingsForm extends React.Component {
   }
 
   renderSettings = () => {
-    return Object.keys(this.state).map(key => {
-      const setting = this.state[key];
+    return Object.keys(this.state.settings).map(key => {
+      const setting = this.state.settings[key];
 
       return (
         <KuiFormRow
