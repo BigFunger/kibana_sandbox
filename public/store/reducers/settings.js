@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import { sortByOrder } from 'lodash';
 import { handleActions } from 'redux-actions';
 import {
@@ -5,7 +6,7 @@ import {
   saveSettingsSuccess
 } from '../actions/settings';
 
-export const settings = handleActions({
+const byId = handleActions({
   [loadSettingsSuccess](state, action) {
     const { settings } = action.payload;
 
@@ -20,25 +21,50 @@ export const settings = handleActions({
   }
 }, {});
 
+const allIds = handleActions({
+  [loadSettingsSuccess](state, action) {
+    const { settings } = action.payload;
+    return Object.keys(settings);
+  }
+}, []);
+
+const idsByCategory = handleActions({
+  [loadSettingsSuccess](state, action) {
+    const { settings } = action.payload;
+    const result = {};
+
+    Object.keys(settings).forEach(key => {
+      const { id, category } = settings[key];
+      result[category] = result[category] || [];
+      result[category].push(id);
+    });
+
+    return result;
+  }
+}, {});
+
+export const settings = combineReducers({
+  byId,
+  allIds,
+  idsByCategory
+});
+
 // Selectors
-export const getSettingsByCategoryId = (state, categoryId) => {
-  const settings = {};
+export const getSettingsByCategoryIdOld = (state, categoryId) => {
+  const result = state.idsByCategory[categoryId].reduce((acc, settingId) => {
+    const setting = state.byId[settingId];
+    acc[settingId] = setting;
+    return acc;
+  }, {});
 
-  Object.keys(state).forEach(id => {
-    const setting = state[id];
-    if (setting.category === categoryId) {
-      settings[id] = { ...setting, id };
-    }
-  });
-
-  return settings;
+  return result;
 };
 
 export const getAllCategories = (state) => {
   const categories = {};
 
-  Object.keys(state).forEach(id => {
-    const setting = state[id];
+  state.allIds.forEach(id => {
+    const setting = state.byId[id];
     categories[setting.category] = { id: setting.category, display: setting.categoryDisplay };
   });
 
@@ -49,8 +75,8 @@ export const getAllCategories = (state) => {
 export const getCategoryById = (state, id) => {
   const categories = {};
 
-  Object.keys(state).forEach(id => {
-    const setting = state[id];
+  state.allIds.forEach(id => {
+    const setting = state.byId[id];
     categories[setting.category] = { id: setting.category, display: setting.categoryDisplay };
   });
 
