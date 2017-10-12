@@ -10,6 +10,7 @@ import {
 } from '../actions/settings';
 
 const defaultState = {
+  categoryId: 'kibana',
   loading: false,
   error: null,
   requestStart: null,
@@ -18,20 +19,20 @@ const defaultState = {
 };
 
 export const uiState = handleActions({
-  [formDirtied](state, action) {
+  [formDirtied](state) {
     return {
       ...state,
       showBottomBar: true
     };
   },
-  [loadSettings](state, action) {
+  [loadSettings](state) {
     return {
       ...state,
       loading: true,
       requestStart: Date.now()
     };
   },
-  [loadSettingsSuccess](state, action) {
+  [loadSettingsSuccess](state) {
     return {
       ...state,
       error: null,
@@ -49,14 +50,14 @@ export const uiState = handleActions({
       requestEnd: Date.now()
     };
   },
-  [saveSettings](state, action) {
+  [saveSettings](state) {
     return {
       ...state,
       loading: true,
       requestStart: Date.now()
     };
   },
-  [saveSettingsSuccess](state, action) {
+  [saveSettingsSuccess](state) {
     return {
       ...state,
       error: null,
@@ -76,6 +77,4 @@ export const uiState = handleActions({
   }
 }, defaultState);
 
-export const getShowBottomBar = (state) => {
-  return state.showBottomBar;
-};
+export const getShowBottomBar = state => state.showBottomBar;

@@ -11,18 +11,7 @@ export const app = combineReducers({
 });
 
 // Selectors
-export const getSettingsByCategoryId = (state, categoryId) => {
-  return fromSettings.getSettingsByCategoryId(state.settings, categoryId);
-};
-
-export const getAllCategories = (state) => {
-  return fromSettings.getAllCategories(state.settings);
-};
-
-export const getCategoryById = (state, id) => {
-  return fromSettings.getCategoryById(state.settings, id);
-};
-
-export const getShowBottomBar = (state) => {
-  return fromUiState.getShowBottomBar(state.uiState);
-};
+export const getSettingsByCategoryId = (state, categoryId) => fromSettings.getSettingsByCategoryId(state.settings, categoryId);
+export const getAllCategories = state => fromSettings.getAllCategories(state.settings);
+export const getCategoryById = (state, id) => fromSettings.getCategoryById(state.settings, id);
+export const getShowBottomBar = state => fromUiState.getShowBottomBar(state.uiState);

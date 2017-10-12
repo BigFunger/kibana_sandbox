@@ -50,7 +50,7 @@ export const settings = combineReducers({
 });
 
 // Selectors
-export const getSettingsByCategoryIdOld = (state, categoryId) => {
+export const getSettingsByCategoryId = (state, categoryId) => {
   const result = state.idsByCategory[categoryId].reduce((acc, settingId) => {
     const setting = state.byId[settingId];
     acc[settingId] = setting;
