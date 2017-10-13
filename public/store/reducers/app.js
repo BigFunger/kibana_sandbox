@@ -1,24 +1,43 @@
 import { combineReducers } from 'redux';
+import * as fromCategories from './categories';
 import * as fromSettings from './settings';
 import * as fromUiState from './ui_state';
 import { createSelector } from 'reselect';
 
+const categories = fromCategories.categories;
 const settings = fromSettings.settings;
 const uiState = fromUiState.uiState;
 
 export const app = combineReducers({
+  categories,
   settings,
   uiState
 });
 
 // Selectors
-export const getAllCategories = state => fromSettings.getAllCategories(state.settings);
-export const getCategoryById = (state, id) => fromSettings.getCategoryById(state.settings, id);
+export const getCategoriesById = state => fromCategories.getCategoriesById(state.categories);
+export const getSortedCategoryIds = state => fromCategories.getSortedCategoryIds(state.categories);
 export const getCategoryId = state => fromUiState.getCategoryId(state.uiState);
 export const getShowBottomBar = state => fromUiState.getShowBottomBar(state.uiState);
 
 export const getSettingIdsByCategoryId = state => fromSettings.getSettingIdsByCategoryId(state.settings);
 export const getSettingsById = state => fromSettings.getSettingsById(state.settings);
+
+export const getCategories = createSelector(
+  getSortedCategoryIds,
+  getCategoriesById,
+  (ids, categories) => {
+    return getSortedCategoryIds.map(id => categories[id]);
+  }
+);
+
+export const getCurrentCategory = createSelector(
+  getCategoryId,
+  getCategoriesById,
+  (categoryId, categories) => {
+    return categories[categoryId];
+  }
+);
 
 export const getCurrentSettings = createSelector(
   getCategoryId,
@@ -31,8 +50,6 @@ export const getCurrentSettings = createSelector(
       acc[settingId] = settingsById[settingId];
       return acc;
     }, {});
-
-    console.log('recalculating', { categoryId, settingIdsByCategory, settingsById, settingIds, result });
 
     return result;
   }

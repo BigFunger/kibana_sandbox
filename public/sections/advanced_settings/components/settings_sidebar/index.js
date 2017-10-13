@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { SettingsSidebar as PresentationComponent } from './settings_sidebar';
-import { getAllCategories, getCategoryId } from '../../../../store/reducers/app';
+import { getCategories, getCategoryId } from '../../../../store/reducers/app';
 import { setCategory } from '../../../../store/actions/ui_state';
 
 const mapStateToProps = (state) => {
-  const categories = getAllCategories(state);
+  const categories = getCategories(state);
   const currentId = getCategoryId(state);
 
   return {

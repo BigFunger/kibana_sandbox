@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { sortByOrder } from 'lodash';
 import { handleActions } from 'redux-actions';
 import {
   loadSettingsSuccess,
@@ -52,26 +51,3 @@ export const settings = combineReducers({
 // Selectors
 export const getSettingIdsByCategoryId = state => state.idsByCategory;
 export const getSettingsById = state => state.byId;
-
-export const getAllCategories = (state) => {
-  const categories = {};
-
-  state.allIds.forEach(id => {
-    const setting = state.byId[id];
-    categories[setting.category] = { id: setting.category, display: setting.categoryDisplay };
-  });
-
-  const unsorted = Object.keys(categories).map(key => categories[key]);
-  return sortByOrder(unsorted, 'display');
-};
-
-export const getCategoryById = (state, id) => {
-  const categories = {};
-
-  state.allIds.forEach(id => {
-    const setting = state.byId[id];
-    categories[setting.category] = { id: setting.category, display: setting.categoryDisplay };
-  });
-
-  return categories[id];
-};

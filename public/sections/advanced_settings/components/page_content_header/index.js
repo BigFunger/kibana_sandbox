@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { PageContentHeader as PresentationComponent } from './page_content_header';
-import { getCategoryById } from '../../../../store/reducers/app';
+import { getCurrentCategory } from '../../../../store/reducers/app';
 
-const mapStateToProps = (state, props) => {
-  const category = getCategoryById(state, props.categoryId);
+const mapStateToProps = (state) => {
+  const category = getCurrentCategory(state);
   const categoryDisplay = category ? category.display : '';
 
   return {
@@ -11,9 +11,9 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = () => {
   return {};
-}
+};
 
 export const PageContentHeader = connect(
   mapStateToProps,
